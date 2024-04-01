@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/see_profile.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="search_box">
+        <input placeholder="Search" id="search" name="search">
+    </div>
+    <form>
+        <table class="table" id="mytable">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Mother Name</th>
+                <th>Father Name</th>
+                <th>Phone Number</th>
+                <th>Email ID</th>
+                <th>Date of Birth</th>
+                <th colspan="2">Change</th>
+
+            </tr>
+            {% for data in details %}
+            <tbody id="searchItem">
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.Name}}</td>
+                    <td>{{data.Mother}}</td>
+                    <td>{{data.Father}}</td>
+                    <td>{{data.Phone}}</td>
+                    <td>{{data.Email}}</td>
+                    <td>{{data.Date_of_birth}}</td>
+                    <td>
+                        <a href="update/{{data.id}}" class="update">Update</a>
+                    </td>
+                    <td>
+                        <a href="delete/{{data.id}}" class="delete">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            <tr>
+                <td class="add" colspan="2">
+                    <a href="addData">Add Data</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        $('document').ready(function(){
+            $('#search').keyup(function(){
+                var data = $(this).val().toLowerCase()
+                $('#searchItem tr').filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(data)>-1)
+                })
+            })
+        })
+    </script>
+</body>
+</html>
+

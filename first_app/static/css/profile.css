@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background-image: radial-gradient(purple,yellow); */
+    min-height: 100vh;
+}
+h1{
+    text-align: center;
+    /* text-shadow: 2px 2px greenyellow; */
+    
+}
+table{
+    box-shadow: 2px 2px 25px yellow;
+    padding: 15px;
+    border-radius: 20px;
+}
+.table{
+    justify-content: center;
+    position: relative;
+    top: 150px;
+    left: 450px;
+}
+.table td{
+    color: aliceblue;
+    font-size: 26px;
+    padding: 5px;
+    width: 300px;
+}
+.table td .input{
+    border-bottom: 2px dashed wheat;
+    padding: 8px;
+    width: 100%;
+    font-size: 18px;
+    background: transparent;
+    border-radius: 10px;
+    text-decoration-color: aliceblue;
+}
+.table .save{
+    background:transparent;
+    width: 60%;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    color: wheat;
+}
+.save:hover{
+    box-shadow: 1px 1px 15px yellow;
+    cursor: pointer;
+}
+.table .view{
+    text-decoration: none;
+    color: blue;
+    padding-left: 50px;
+}
+
